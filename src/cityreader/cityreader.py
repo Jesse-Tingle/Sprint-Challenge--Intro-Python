@@ -89,5 +89,29 @@ def cityreader_stretch(lat1, lon1, lat2, lon2, cities=[]):
 
     # Go through each city and check to see if it falls within
     # the specified coordinates.
+    coordinates = [(city.lat, city.lon) for city in cities]
+    for i in coordinates:
+        x = i[0]
+        y = i[1]
+        if x > lat and x < lat2 and y > lon and y < lon2:
+            return within.append(i)
 
-    return within
+        else:
+            return False
+
+    print(within)
+
+# def FindPoint(x1, y1, x2, y2, x, y) :
+#     if (x > x1 and x < x2 and
+#         y > y1 and y < y2) :
+#         return True
+#     else :
+#         return False
+
+    # return within
+
+# Enter lat1,lon1: 45,-100
+# Enter lat2,lon2: 32,-120
+
+
+cityreader_stretch(45, -100, 32, -120, cities)
